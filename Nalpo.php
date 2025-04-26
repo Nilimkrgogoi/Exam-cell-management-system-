@@ -213,8 +213,7 @@ li.dropdown {
           <li><a href="#">Privacy Policy</a></li><br>
           <li><a href="#">Terms of Service</a></li>
         </ul>
-        <p>&copy; 2023 nalbaripolytechnic. All rights reserved. 
-          <pre>Developed by- Nilim Kumar Gogoi , Manali Kalita , Ankita Talukdar, Mridusmita Ray</pre>
+        <p>&copy; 2023 nalbaripolytechnic. All rights reserved
         </p>
     </footer>
 </body>
