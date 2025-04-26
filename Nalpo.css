@@ -1,0 +1,299 @@
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  text-align: center;
+  padding: 0%;
+  color: red;
+  font-weight: lighter;
+}
+h2{
+  text-align: center;
+  padding: 0%;
+  color: #003366;
+}
+h5{
+  text-align: center;
+  padding: 0%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+#logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.head-of-exam-cell {
+display: flex;
+align-items: center;
+margin-top: 50px;
+}
+.head-of-exam-cell img {
+width: 200px;
+height: auto;
+margin-right: 20px;
+border-radius: 10px;
+}
+.head-of-exam-cell p {
+flex-grow: 1;
+text-align: right ;
+}  
+/* Main content section styles */
+
+section {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer styles */
+/* styles.css */
+
+/* Footer styles */
+footer {
+background-color: #333; /* Background color of the footer */
+color: #fff; /* Text color */
+padding: 20px 0; /* Padding around the footer content */
+text-align: center; /* Center-align the content */
+}
+
+footer p {
+margin-bottom: 10px; /* Add some space below the paragraph */
+}
+
+footer ul {
+list-style: none; /* Remove default list styles */
+padding: 0; /* Remove default padding */
+text-align: left;
+}
+
+footer ul li {
+display: inline-block; /* Display list items horizontally */
+margin-right: 10px; /* Add space between list items */
+text-align: left;
+}
+
+footer ul li:last-child {
+margin-right: 0; /* Remove margin from the last list item */
+}
+
+footer ul li a {
+color: #fff; /* Link color */
+text-decoration: none; /* Remove underline */
+transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+footer ul li a:hover {
+color: #ccc; /* Change link color on hover */
+}
+
+
+/* Styling links */
+a {
+  color: #003366;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+/*Signup*/
+
+.container h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+label {
+display: block;
+margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+button {
+width: 100%;
+padding: 10px;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #0056b3;
+}
+/* Login form */
+.loginForm {
+width: 300px;
+margin: 0 auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+background-color: #f9f9f9;
+}
+
+h2 {
+text-align: center;
+}
+
+label {
+display: block;
+margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+width: 100%;
+padding: 10px;
+background-color: #007bff;
+color: #fff;
+border: none;
+border-radius: 3px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #0056b3;
+}
+
+form {
+max-width: 400px;
+margin: 20px auto;
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+display: block;
+margin-bottom: 8px;
+color: #333;
+}
+
+input,
+select {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+font-style: inherit;
+}
+
+button {
+background-color: #4caf50;
+color: #fff;
+padding: 10px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #45a049;
+}
+@media (min-width: 1140px){
+
+ 
+.container-fluid .left-side a{
+    display: inline-block;
+    background: rgb(233, 233, 233);
+    padding: 12px 18px 12px 18px;
+    text-decoration: none;
+    border-radius: 25px;
+    color: white;
+    margin-top: 15px;
+    font-size: 17px;
+    font-weight: bold;
+  }
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-side {
+  flex: 1;
+  padding: 20px;
+}
+
+.right-side {
+  flex: 1;
+  padding: 20px;
+}
+
+.container-fluid h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: left;
+}
+.container-fluid p{
+  color: #000000;
+  text-align: left;
+}
+/*
+h3 {
+  font-size: 24px;
+  color: #000000;
+  text-align:center;
+}*/
+
+.exam {
+  width: 400%;
+  max-width: 600px;
+  height: auto;
+}
+}
+/* Additional CSS for the specific section */
+.notices {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.notices h2 {
+  margin-bottom: 20px;
+}
+
+.notice-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.notice-item:last-child {
+  border-bottom: none;
+}
