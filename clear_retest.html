@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Results</title>
+<link href="Nalpo.css" rel="stylesheet" type="text/css">
+</head>
+<body><br><br>
+    <div style="display: flex; justify-content: space-between;">
+    <div style="width: 45%;">
+    <h2>Enter Exam Results</h2>
+    <form action="clear_retest.php" method="post">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="roll_no">Roll Number:</label>
+        <input type="text" id="roll_no" name="roll_no" required>
+        
+        <label for="department">Department:</label>
+        <select id="department" name="department">
+            <option value="">Select Department</option>
+            <option value="cse">Computer Science & Engineering</option>
+            <option value="el">Electrical Engineering</option>
+            <option value="pt">Printing Technology</option>
+        </select>
+
+        <label for="semester">Semester:</label>
+        <select id="semester" name="semester">
+            <option value="">Select Semester</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+        </select>
+
+        <label for="result">Result:</label>
+        <select id="result" name="result">
+            <option value="">Result</option>
+            <option value="clear">Clear</option>
+            <option value="retest">Retest</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+    <div style="width: 45%;">
+        <h2>View Exam Results</h2>
+        <form action="view_result.php" method="post">
+            <label for="view_department">Department:</label>
+            <select id="view_department" name="view_department">
+                <option value="cse">Computer Science & Engineering</option>
+                <option value="el">Electrical Engineering</option>
+                <option value="pt">Printing Technology</option>
+            </select>
+
+            <label for="view_semester">Semester:</label>
+            <select id="view_semester" name="view_semester">
+                <option value="1">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+            </select>
+
+            <button type="submit">View Results</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group select,
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Select Department, Semester, and Subject</h2>
+        <form id="attendanceForm" action="attendance_list.php" method="POST">
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <select id="department" name="department" onchange="displaySemesters()">
+                    <option value="">Select Department</option>
+                    <option value="cse">Computer Science & Engineering</option>
+                    <option value="el">Electrical Engineering</option>
+                    <option value="pt">Printing Technology</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="semester">Semester:</label>
+                <select id="semester" name="semester">
+                    <option value="">Select Semester</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject" onchange="displaySubjects()">
+                    <option value="">Select Subject</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function displaySemesters() {
+            const departmentSelect = document.getElementById("department");
+            const semesterSelect = document.getElementById("semester");
+            const department = departmentSelect.value;
+
+            // Clear the existing options
+            semesterSelect.innerHTML = "<option value=''>Select Semester</option>";
+
+            // Add the semesters for the selected department
+            const semesters = ["Semester 1", "Semester 2", "Semester 3", "Semester 4", "Semester 5", "Semester 6"];
+            semesters.forEach(sem => {
+                semesterSelect.innerHTML += `<option value='${sem.toLowerCase().replace(" ", "")}'>${sem}</option>`;
+            });
+
+            // Clear subject options when department changes
+            const subjectSelect = document.getElementById("subject");
+            subjectSelect.innerHTML = "<option value=''>Select Subject</option>";
+        }
+
+        function displaySubjects() {
+        const departmentSelect = document.getElementById("department");
+        const semesterSelect = document.getElementById("semester");
+        const subjectSelect = document.getElementById("subject");
+        const department = departmentSelect.value;
+        const semester = semesterSelect.value;
+      
+        // Clear the existing options
+        subjectSelect.innerHTML = "<option value=''>Select Subject</option>";
+      
+        // Add the subjects for the selected department and semester
+        if (department === "cse" && semester === "semester1") {
+          subjectSelect.innerHTML += "<option value='English'>English</option>";
+          subjectSelect.innerHTML += "<option value='Physics'>Physics</option>";
+          subjectSelect.innerHTML += "<option value='Chemistry'>Chemistry</option>";
+          subjectSelect.innerHTML += "<option value='Mathematics'>Mathematics</option>";
+          subjectSelect.innerHTML += "<option value='Engineering Drawing'>Engineering Drawing</option>";
+          subjectSelect.innerHTML += "<option value='Workshop'>Workshop</option>";
+        } else if (department === "cse" && semester === "semester2") {
+          subjectSelect.innerHTML += "<option value='English'>English</option>";
+          subjectSelect.innerHTML += "<option value='Physics'>Physics</option>";
+          subjectSelect.innerHTML += "<option value='Chemistry'>Chemistry</option>";
+          subjectSelect.innerHTML += "<option value='Mathematics'>Mathematics</option>";
+          subjectSelect.innerHTML += "<option value='Engineering Mechanics'>Engineering Mechanics</option>";
+          subjectSelect.innerHTML += "<option value='Workshop'>Workshop</option>";
+        } else if (department === "cse" && semester === "semester3") {
+          subjectSelect.innerHTML += "<option value='Computer Application and Programming'>Computer Application and Programming</option>";
+          subjectSelect.innerHTML += "<option value='Elements of Multimedia'>Elements of Multimedia</option>";
+          subjectSelect.innerHTML += "<option value='Computer Architecture and Organisation'>Computer Architecture and Organisation</option>";
+          subjectSelect.innerHTML += "<option value='Mathematics'>Mathematics</option>";
+          subjectSelect.innerHTML += "<option value='Elements of Electrical Engineering'>Elements of Electrical Engineering</option>";
+        } else if (department === "cse" && semester === "semester4") {
+          subjectSelect.innerHTML += "<option value='Data Structure'>Data Structure</option>";
+          subjectSelect.innerHTML += "<option value='System Programming'>System Programming</option>";
+          subjectSelect.innerHTML += "<option value='MP & Interfacing'>MP & Interfacing</option>";
+          subjectSelect.innerHTML += "<option value='Advanced C & C++'>Advanced C & C++</option>";
+          subjectSelect.innerHTML += "<option value='Computer Hardware and Networking'>Computer Hardware and Networking</option>";
+          subjectSelect.innerHTML += "<option value='Digital Electronics'>Digital Electronics</option>";
+        } else if (department === "cse" && semester === "semester5") {
+          subjectSelect.innerHTML += "<option value='Database Management System'>Database Management System</option>";
+          subjectSelect.innerHTML += "<option value='Internet & Web Technology'>Internet & Web Technology</option>";
+          subjectSelect.innerHTML += "<option value='Computer Communication & Networking'>Computer Communication & Networking</option>";
+          subjectSelect.innerHTML += "<option value='Java Programming'>Java Programming</option>";
+          subjectSelect.innerHTML += "<option value='Operating System'>Operating System</option>";
+          subjectSelect.innerHTML += "<option value='Visual Programming'>Visual Programming</option>";
+        } else if (department === "cse" && semester === "semester6") {
+          subjectSelect.innerHTML += "<option value='Industrial Management & Entrepreneurship'>Industrial Management & Entrepreneurship</option>";
+          subjectSelect.innerHTML += "<option value='Cryptography and Network Security'>Cryptography and Network Security</option>";
+          subjectSelect.innerHTML += "<option value='Mobile Computing'>Mobile Computing</option>";
+          subjectSelect.innerHTML += "<option value='Artificial Intelligence'>Artificial Intelligence</option>";
+          subjectSelect.innerHTML += "<option value='Software Engineering'>Software Engineering</option>";
+        } else if (department === "el" && semester === "semester1") {
+          subjectSelect.innerHTML += "<option value='English'>English</option>";
+          subjectSelect.innerHTML += "<option value='Physics'>Physics</option>";
+          subjectSelect.innerHTML += "<option value='Chemistry'>Chemistry</option>";
+          subjectSelect.innerHTML += "<option value='Mathematics'>Mathematics</option>";
+          subjectSelect.innerHTML += "<option value='Engineering Drawing'>Engineering Drawing</option>";
+          subjectSelect.innerHTML += "<option value='Workshop'>Workshop</option>";
+        } else if (department === "el" && semester === "semester2") {
+          subjectSelect.innerHTML += "<option value='English'>English</option>";
+          subjectSelect.innerHTML += "<option value='Physics'>Physics</option>";
+          subjectSelect.innerHTML += "<option value='Chemistry'>Chemistry</option>";
+          subjectSelect.innerHTML += "<option value='Mathematics'>Mathematics</option>";
+          subjectSelect.innerHTML += "<option value='Engineering Mechanics'>Engineering Mechanics</option>";
+          subjectSelect.innerHTML += "<option value='Workshop'>Workshop</option>";
+        } else if (department === "el" && semester === "semester3") {
+          subjectSelect.innerHTML += "<option value='Computer Application & Programming'>Computer Application & Programming</option>";
+          subjectSelect.innerHTML += "<option value='Engineering Economics & Accountancy'>Engineering Economics & Accountancy</option>";
+          subjectSelect.innerHTML += "<option value='Principles of Electrical Engineering'>Principles of Electrical Engineering</option>";
+          subjectSelect.innerHTML += "<option value='Elements of Mechanical Engineering'>Elements of Mechanical Engineering</option>";
+          subjectSelect.innerHTML += "<option value='Elements of Electronics & Devices'>Elements of Electronics & Devices</option>";
+          subjectSelect.innerHTML += "<option value='Mathematics'>Mathematics</option>";
+        } else if (department === "el" && semester === "semester4") {
+          subjectSelect.innerHTML += "<option value='Electrical Circuit & Network'>Electrical Circuit & Network</option>";
+          subjectSelect.innerHTML += "<option value='Electrical & Electronics Drawing & Design'>Electrical & Electronics Drawing & Design</option>";
+          subjectSelect.innerHTML += "<option value='Electrical Measurment & Measuring Instrument-I'>Electrical Measurment & Measuring Instrument-I</option>";
+          subjectSelect.innerHTML += "<option value='Electrical Machines-I'>Electrical Machines-I</option>";
+          subjectSelect.innerHTML += "<option value='Electrical Engineering Material'>Electrical Engineering Material</option>";
+          subjectSelect.innerHTML += "<option value='Digital Electronics'>Digital Electronics</option>";
+        } else if (department === "el" && semester === "semester5") {
+          subjectSelect.innerHTML += "<option value='Electrical Machine-II'>Electrical Machine-II</option>";
+          subjectSelect.innerHTML += "<option value='Electrical Measurement & Measuring Instrument-II'>Electrical Measurement & Measuring Instrument-II</option>";
+          subjectSelect.innerHTML += "<option value='Electrical Power'>Electrical Power</option>";
+          subjectSelect.innerHTML += "<option value='Microprocessor'>Microprocessor</option>";
+          subjectSelect.innerHTML += "<option value='Control System'>Control System</option>";
+          subjectSelect.innerHTML += "<option value='Non-Conventional Energy Sources'>Non-Conventional Energy Sources</option>";
+        } else if (department === "el" && semester === "semester6") {
+          subjectSelect.innerHTML += "<option value='Industrial Management & Entrepreneurship'>Industrial Management & Entrepreneurship</option>";
+          subjectSelect.innerHTML += "<option value='Installation and Maintenance'>Installation and Maintenance</option>";
+          subjectSelect.innerHTML += "<option value='Electrical Estimating and Contracting'>Electrical Estimating and Contracting</option>";
+          subjectSelect.innerHTML += "<option value='AC Distribution and Utilisation'>AC Distribution and Utilisation</option>";
+          subjectSelect.innerHTML += "<option value='Switchgear and Protection'>Switchgear and Protection</option>";
+        } else if (department === "pt" && semester === "semester1") {
+          subjectSelect.innerHTML += "<option value='English'>English</option>";
+          subjectSelect.innerHTML += "<option value='Physics'>Physics</option>";
+          subjectSelect.innerHTML += "<option value='Chemistry'>Chemistry</option>";
+          subjectSelect.innerHTML += "<option value='Mathematics'>Mathematics</option>";
+          subjectSelect.innerHTML += "<option value='Engineering Drawing'>Engineering Drawing</option>";
+          subjectSelect.innerHTML += "<option value='Workshop'>Workshop</option>";
+        } else if (department === "pt" && semester === "semester2") {
+          subjectSelect.innerHTML += "<option value='English'>English</option>";
+          subjectSelect.innerHTML += "<option value='Physics'>Physics</option>";
+          subjectSelect.innerHTML += "<option value='Chemistry'>Chemistry</option>";
+          subjectSelect.innerHTML += "<option value='Mathematics'>Mathematics</option>";
+          subjectSelect.innerHTML += "<option value='Engineering Mechanics'>Engineering Mechanics</option>";
+          subjectSelect.innerHTML += "<option value='Workshop'>Workshop</option>";
+        } else if (department === "pt" && semester === "semester3") {
+          subjectSelect.innerHTML += "<option value='Computer Application & Programming'>Computer Application & Programming</option>";
+          subjectSelect.innerHTML += "<option value='Engineering Economics & Accountancy'>Engineering Economics & Accountancy</option>";
+          subjectSelect.innerHTML += "<option value='Element of Electrical Engineering'>Element of Electrical Engineering</option>";
+          subjectSelect.innerHTML += "<option value='Printing Process'>Printing Process</option>";
+          subjectSelect.innerHTML += "<option value='Element of Electronics Engineering'>Element of Electronics Engineering</option>";
+          subjectSelect.innerHTML += "<option value='Prepress Repro Technique'>Prepress Repro Technique</option>";
+        } else if (department === "pt" && semester === "semester4") {
+          subjectSelect.innerHTML += "<option value='Visual Design & DTP'>Visual Design & DTP</option>";
+          subjectSelect.innerHTML += "<option value='Image Processing'>Image Processing</option>";
+          subjectSelect.innerHTML += "<option value='Printers Material Science-I'>Printers Material Science-I</option>";
+          subjectSelect.innerHTML += "<option value='Gravure Flexoghaphe & Screen Printing'>Gravure Flexoghaphe & Screen Printing</option>";
+          subjectSelect.innerHTML += "<option value='Typesetting & Composition'>Typesetting & Composition</option>";
+          subjectSelect.innerHTML += "<option value='Theory of Machines'>Theory of Machines</option>";
+        } else if (department === "pt" && semester === "semester5") {
+          subjectSelect.innerHTML += "<option value='Digital Prepress'>Digital Prepress</option>";
+          subjectSelect.innerHTML += "<option value='Offset Printing Technology'>Offset Printing Technology</option>";
+          subjectSelect.innerHTML += "<option value='Printers Material Science-II'>Printers Material Science-II</option>";
+          subjectSelect.innerHTML += "<option value='Planographic Printing Technique-I'>Planographic Printing Technique-I</option>";
+          subjectSelect.innerHTML += "<option value='Press Work'>Press Work</option>";
+          subjectSelect.innerHTML += "<option value='Printing Machine Maintenance'>Printing Machine Maintenance</option>";
+        } else if (department === "pt" && semester === "semester6") {
+          subjectSelect.innerHTML += "<option value='Industrial Management & Entrepreneurship'>Industrial Management & Entrepreneurship</option>";
+          subjectSelect.innerHTML += "<option value='Binding and Finishing'>Binding and Finishing</option>";
+          subjectSelect.innerHTML += "<option value='Estimating and Costing'>Estimating and Costing</option>";
+          subjectSelect.innerHTML += "<option value='Planographic Printing Technique-II'>Planographic Printing Technique-II</option>";
+          subjectSelect.innerHTML += "<option value='Machine'>Machine</option>";
+        }
+      }
+      </script>
+</body>
+</html>

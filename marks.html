@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nalbari Polytechnic</title>
+  <style>
+ * {
+    margin: 0;
+    padding: 0;
+}
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+h1{
+    text-align: center;
+    padding: 0%;
+    color: red;
+    font-weight: lighter;
+}
+h2{
+    text-align: center;
+    padding: 0%;
+    color: #003366;
+}
+h5{
+    text-align: center;
+    padding: 0%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+ 
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    color: white;
+  }
+  .navbar {
+    justify-content: center;
+    align-items: start; 
+    text-align: left;
+    
+  }  
+  .navbar ul li {
+    display: inline-block;
+    list-style: none;
+  }
+
+.navbar ul li a {
+    text-decoration: none;
+  }
+    
+    li a, .dropbtn {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+    
+    li.dropdown {
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .dropdown-content a:hover {background-color: red;}
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .container {
+      width: 80%;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+<body>
+  <h1>Nalbari Polytechnic,Chandkuchi</h1>
+  <h2>নলবাৰী পলিটেক্‌নিক্‌,চান্দকুছি</h2>
+  <h5>(a govt. of assam institute)</h5>
+  <img src="http://www.nalbaripolytechnic.in/images/logo.png" alt="College Logo" id="logo" height="100px">
+  <div class="navbar">
+      <ul>
+          <li><a href="admindasboard.php">Home</a></li>
+          <li><a href="exam_form.php">Exam</a></li>
+          <li><a href="marks.html">Add Marks</a></li>
+          <li><a href="attendance_admin.html">Add Attendance</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">View NC/DC </a>
+            <div class="dropdown-content">
+            <a href="cse.html">Computer Science & Engineering </a>
+            <a href="el.html">Electrical Engineering</a>
+            <a href="pt.html">Printing Technology</a>
+            </div>
+          </li>
+          <li><a href="studentsignup.php">Add Student</a></li>
+          <li><a href="invigilator.php">Manage Invigilators</a></li>
+          <li><a href="manage-students.php">Manage Students</a></li>
+          <li><a href="seat_allocation.html">Seat Allocation</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Analytics and Reporting</a>
+            <div class="dropdown-content">
+            <a href="marksheet.html">View Marks</a>
+            <a href="clear_retest.html">Clear/Retest</a>
+            </div>
+          </li>
+          <li><a href="logout.php">logout</a></li>
+      </li> 
+      </ul>
+  </div>
+
+  <div class="container">
+      <div class="container">
+        <form id="marksForm" action="marks.php" method="POST">
+          <div class="form-group">
+            <label for="department">Select Department</label>
+            <select id="department" name="department">
+              <option value="">Select Department</option>
+              <option value="CSE">Computer Science & Engineering</option>
+              <option value="PT">Printing Technology</option>
+              <option value="EE">Electrical Engineering</option>
+              <!-- Add other departments as needed -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="semester">Select Semester</label>
+            <select id="semester" name="semester">
+              <option value="">Select Semester</option>
+              <option value="1">1st</option>
+              <option value="2">2nd</option>
+              <option value="3">3rd</option>
+              <option value="4">4th</option>
+              <option value="5">5th</option>
+              <option value="6">6th</option>
+              <!-- Add other semesters as needed -->
+            </select>
+          </div>
+          <button type="submit">View Marks Entry</button>
+        </form>
+      </div>
+</body>
+</html>
